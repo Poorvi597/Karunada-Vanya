@@ -1,0 +1,2 @@
+-keep class com.karunadavanya.domain.** { *; }
+-keep class com.karunadavanya.data.local.** { *; }
