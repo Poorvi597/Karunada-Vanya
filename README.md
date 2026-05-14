@@ -11,7 +11,7 @@ Kotlin Android app based on `karunada_vanya_sop1.md`.
 
 ## Open in Android Studio
 
-1. Open `C:\Users\poorv\Desktop\FinalProject` as an Android Studio project.
+1. Clone this repository and open it in Android Studio.
 2. Let Android Studio sync Gradle.
 3. Run the `app` configuration on an emulator or Android phone.
 
