@@ -434,8 +434,8 @@ private fun HomeBottomNavItem(label: String, icon: ImageVector, selected: Boolea
 private fun HomeHero() {
     val language = LocalAppLanguage.current
     Box(modifier = Modifier.fillMaxWidth().height(530.dp)) {
-        AsyncImage(
-            model = "https://lh3.googleusercontent.com/aida-public/AB6AXuCWfn9h4UepgWW2QBNN8lfT35HBbQY_bzE-PIOWVYbuTnzk5zkB9jeANMMdXxW-91IkEHVQydGCVrXLpWEMblu8JAmuGC6oCI4N680z53fExMGqkAZ0Xyqu5tS_xCNvNRfoNS1-B_4uxyKnO6L_bP9fkq32NqsWKNCKJ-D32tsuIkuQ1VvnWOr4azuP2Gq_-b1tYrLjAy-FOY5-D_mx4O6sQUx9ohBM4oCtw6OWBOwy1CJU6QgkW_5tNGk0-Id6y3dfaN0dAzzqjQ",
+        Image(
+            painter = painterResource(id = R.drawable.tiger),
             contentDescription = "A majestic Bengal tiger lying in the golden tall grass of Bandipur National Park",
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -1181,6 +1181,16 @@ private fun AnimalTypeDropdown(selectedAnimal: String, onAnimalSelected: (String
             modifier = Modifier
                 .fillMaxWidth()
                 .menuAnchor(type = MenuAnchorType.PrimaryNotEditable),
+            leadingIcon = selectedAnimal.takeIf { it.isNotBlank() }?.let { animal ->
+                {
+                    Image(
+                        painter = painterResource(id = animalDrawableRes(animal)),
+                        contentDescription = speciesName(animal, language),
+                        modifier = Modifier.size(32.dp).clip(CircleShape),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            },
             placeholder = { Text(tr("Select species", language)) },
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
             shape = RoundedCornerShape(8.dp)
@@ -1192,6 +1202,14 @@ private fun AnimalTypeDropdown(selectedAnimal: String, onAnimalSelected: (String
             animalTypes.forEach { animal ->
                 DropdownMenuItem(
                     text = { Text(speciesName(animal, language)) },
+                    leadingIcon = {
+                        Image(
+                            painter = painterResource(id = animalDrawableRes(animal)),
+                            contentDescription = speciesName(animal, language),
+                            modifier = Modifier.size(40.dp).clip(CircleShape),
+                            contentScale = ContentScale.Crop
+                        )
+                    },
                     onClick = {
                         onAnimalSelected(animal)
                         expanded = false

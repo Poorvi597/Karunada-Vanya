@@ -8,6 +8,7 @@ import android.location.Location
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -47,12 +48,12 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import coil.compose.AsyncImage
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.karunadavanya.domain.AlertPriority
@@ -219,8 +220,8 @@ private fun AlertFeedCard(alert: CommunityAlert, onClick: () -> Unit) {
     ) {
         Column {
             Box(modifier = Modifier.fillMaxWidth().height(192.dp)) {
-                AsyncImage(
-                    model = alert.imageForAlert(),
+                Image(
+                    painter = painterResource(id = alertAnimalDrawableRes(alert)),
                     contentDescription = alert.title,
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop
@@ -332,20 +333,6 @@ private fun AlertsFooter() {
             fontStyle = FontStyle.Italic,
             color = Color(0xFFA8A6A4)
         )
-    }
-}
-
-private fun CommunityAlert.imageForAlert(): String {
-    val text = "${title} ${animalType} ${description}".lowercase()
-    return when {
-        "elephant" in text -> "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46"
-        "wild boar" in text || "boar" in text -> "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85"
-        "leopard" in text || "panther" in text -> "https://images.unsplash.com/photo-1547721064-36202636224d"
-        "gaur" in text || "bison" in text -> "https://commons.wikimedia.org/wiki/Special:FilePath/Bos%20gaurus.jpg"
-        "tiger" in text -> "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb"
-        "sloth bear" in text -> "https://images.unsplash.com/photo-1589656966895-2f33e7653819"
-        "monkey" in text || "macaque" in text -> "https://commons.wikimedia.org/wiki/Special:FilePath/Bonnet%20macaque%20-%20Macaca%20radiata.jpg"
-        else -> "https://commons.wikimedia.org/wiki/Special:FilePath/Panthera%20tigris%20tigris.jpg"
     }
 }
 
