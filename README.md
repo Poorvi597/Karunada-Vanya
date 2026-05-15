@@ -86,6 +86,29 @@ People living near forest borders often see wildlife such as tigers, elephants, 
 - MediaPlayer
 - Coil for image loading
 
+## Screenshots
+
+### Home Screen
+![Home Screen](screenshots/home_screen.jpeg)
+
+### Explore Wildlife Screen
+![Explore Wildlife](screenshots/explore_wildlife_screen.jpeg)
+
+### Animal Info Screen
+![Animal Info](screenshots/animal_info_screen.jpeg)
+
+### Alert Report Screen
+![Alert Report](screenshots/alert_report_screen.jpeg)
+
+### Alert View Screen
+![Alert View](screenshots/alert_view_screen.jpeg)
+
+### Guide Screen
+![Guide](screenshots/guide_screen.jpeg)
+
+### Kannada Language Screen
+![Kannada Screen](screenshots/kannada_screen.jpeg)
+
 ## Architecture Overview
 
 The app follows a layered structure:
