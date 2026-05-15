@@ -96,7 +96,6 @@ data class ReportFormState(
 ) {
     val canSubmit: Boolean
         get() = species.isNotBlank() &&
-            description.isNotBlank() &&
             locationDescription.isNotBlank() &&
             time.isNotBlank() &&
             date.isNotBlank() &&
