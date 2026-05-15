@@ -109,6 +109,12 @@ People living near forest borders often see wildlife such as tigers, elephants, 
 ### Kannada Language Screen
 ![Kannada Screen](screenshots/kannada_screen.jpeg)
 
+
+## APK Download
+
+[Download Karunada-Vanya APK](https://drive.google.com/file/d/1Z7FZGFHQH1btPTUR2yy-ShvFGwZddBJS/view?usp=sharing)
+
+
 ## Architecture Overview
 
 The app follows a layered structure:
@@ -123,7 +129,7 @@ Repositories
 Room Database / Firebase / Local Resources
 
 
-## Open in Android Studio
+## Setup in Android Studio
 
 1. Clone this repository and open it in Android Studio.
 2. Let Android Studio sync Gradle.
